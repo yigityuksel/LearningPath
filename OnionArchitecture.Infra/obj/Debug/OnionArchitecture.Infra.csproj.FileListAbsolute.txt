@@ -1,0 +1,17 @@
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\bin\Debug\OnionArchitecture.Infra.dll.config
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\bin\Debug\OnionArchitecture.Infra.dll
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\bin\Debug\OnionArchitecture.Infra.pdb
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\bin\Debug\EntityFramework.dll
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\bin\Debug\OnionArchitecture.Core.dll
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\bin\Debug\OnionArchitecture.Core.pdb
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\bin\Debug\EntityFramework.xml
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\obj\Debug\OnionArchitecture.Infra.csprojResolveAssemblyReference.cache
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\obj\Debug\OnionArchitecture.Infra.dll
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\obj\Debug\OnionArchitecture.Infra.pdb
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\obj\Debug\OnionArchitecture.Infra.Migrations.InitialCreate.resources
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\obj\Debug\OnionArchitecture.Infra.csproj.GenerateResource.Cache
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\obj\Debug\OnionArchitecture.Infra.Migrations.Links.resources
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\obj\Debug\OnionArchitecture.Infra.Migrations.UserPasswordList.resources
+C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.Infra\obj\Debug\OnionArchitecture.Infra.Migrations.UserPasswordAddStatus.resources
