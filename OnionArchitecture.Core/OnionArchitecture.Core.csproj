@@ -30,16 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Xml.Linq" />
@@ -50,19 +41,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\Repositories\IOnionArchitectureContext.cs" />
-    <Compile Include="Interfaces\Repositories\IUserRepository.cs" />
-    <Compile Include="Interfaces\Services\IUserService.cs" />
+    <Compile Include="Enums\LinkType.cs" />
+    <Compile Include="Exceptions\LinkExpiredException.cs" />
+    <Compile Include="Exceptions\PasswordUsedBeforeException.cs" />
+    <Compile Include="Exceptions\SameUserNameExistException.cs" />
+    <Compile Include="Exceptions\UserNotFoundException.cs" />
+    <Compile Include="Interfaces\Repositories\ILinkRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IUserPasswordHistoryRepository.cs" />
+    <Compile Include="Interfaces\Services\IAuthenticationService.cs" />
+    <Compile Include="Interfaces\Services\ILinkService.cs" />
+    <Compile Include="Interfaces\Services\IUserPasswordHistoryService.cs" />
     <Compile Include="Models\Link.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Models\UserPassword.cs" />
+    <Compile Include="Models\UserPasswordHistory.cs" />
+    <Compile Include="Interfaces\Repositories\IUserRepository.cs" />
+    <Compile Include="Interfaces\Services\IMailService.cs" />
+    <Compile Include="Interfaces\Services\IPasswordService.cs" />
+    <Compile Include="Interfaces\Services\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

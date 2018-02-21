@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace OnionArchitecture.Core.Models
 {
     public class User
     {
-        [Key]
         public Guid Id { get; set; }
-
         public string Username { get; set; }
-
         public string Email { get; set; }
+        public string Password { get; set; }
+        public string Salt { get; set; }
+        public DateTime PasswordCreationTime { get; set; }
 
-        public List<UserPassword> UserPassword { get; set; }
+        public virtual ICollection<UserPasswordHistory> UserPasswordHistories { get; set; }
+        public virtual ICollection<Link> Links { get; set; }
     }
 }

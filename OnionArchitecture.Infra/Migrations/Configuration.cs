@@ -5,7 +5,7 @@ namespace OnionArchitecture.Infra.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<OnionArchitecture.Infra.Context.OnionArchitectureContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<OnionArchitecture.Infra.Context.RepositoryContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace OnionArchitecture.Infra.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(OnionArchitecture.Infra.Context.OnionArchitectureContext context)
+        protected override void Seed(OnionArchitecture.Infra.Context.RepositoryContext context)
         {
             //  This method will be called after migrating to the latest version.
 
