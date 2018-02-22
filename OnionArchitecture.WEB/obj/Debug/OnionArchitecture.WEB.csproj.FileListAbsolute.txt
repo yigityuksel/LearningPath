@@ -50,7 +50,6 @@ C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\bin\System.Web
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\bin\System.Web.WebPages.Razor.dll
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\bin\WebGrease.dll
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\bin\OnionArchitecture.Core.dll
-C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\bin\OnionArchitecture.EF.dll
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\bin\OnionArchitecture.Infra.pdb
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\bin\Microsoft.AI.ServerTelemetryChannel.xml
@@ -82,7 +81,6 @@ C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\bin\Microsoft.
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\bin\OnionArchitecture.Core.pdb
-C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\bin\OnionArchitecture.EF.pdb
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\obj\Debug\OnionArchitecture.WEB.csprojResolveAssemblyReference.cache
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\obj\Debug\OnionArchitecture.WEB.dll
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.WEB\obj\Debug\OnionArchitecture.WEB.pdb

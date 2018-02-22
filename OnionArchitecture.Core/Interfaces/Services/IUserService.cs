@@ -11,6 +11,6 @@ namespace OnionArchitecture.Core.Interfaces.Services
 
         User GetUserByUserId(Guid userId);
 
-        User ChangeUserPassword(Guid userId, string newPassword);
+        User ChangeUserPassword(User user, string newPassword);
     }
 }

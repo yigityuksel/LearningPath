@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{EF3A0050-689A-48D3-A11F-6D5645D44DC9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OnionArchitecture.Core", "OnionArchitecture.Core", "{EF3A0050-689A-48D3-A11F-6D5645D44DC9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{DFB2B024-E958-497E-9EA7-7B20DEBBD274}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OnionArchitecture.Infra", "OnionArchitecture.Infra", "{DFB2B024-E958-497E-9EA7-7B20DEBBD274}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF", "EF", "{66C9CE78-EDB8-4A8E-B5C0-30B1F1D97139}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OnionArchitecture.EF", "OnionArchitecture.EF", "{66C9CE78-EDB8-4A8E-B5C0-30B1F1D97139}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{28949422-E6B9-4FA5-99C1-221B6AA3B2EF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OnionArchitecture.Tests", "OnionArchitecture.Tests", "{28949422-E6B9-4FA5-99C1-221B6AA3B2EF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{52625479-9CB3-427E-ADA1-44A4D5752768}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OnionArchitecture.WEB", "OnionArchitecture.WEB", "{52625479-9CB3-427E-ADA1-44A4D5752768}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionArchitecture.Core", "OnionArchitecture.Core\OnionArchitecture.Core.csproj", "{1C4F228E-7F20-43C6-947B-53F0619053FB}"
 EndProject

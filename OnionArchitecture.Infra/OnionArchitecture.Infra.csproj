@@ -30,14 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -49,38 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\RepositoryContext.cs" />
-    <Compile Include="Migrations\201802201507329_Initial.cs" />
-    <Compile Include="Migrations\201802201507329_Initial.Designer.cs">
-      <DependentUpon>201802201507329_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802201516331_Links.cs" />
-    <Compile Include="Migrations\201802201516331_Links.Designer.cs">
-      <DependentUpon>201802201516331_Links.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802210724450_Salt-Added.cs" />
-    <Compile Include="Migrations\201802210724450_Salt-Added.Designer.cs">
-      <DependentUpon>201802210724450_Salt-Added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802210900065_DateTimeForPreviousPassword.cs" />
-    <Compile Include="Migrations\201802210900065_DateTimeForPreviousPassword.Designer.cs">
-      <DependentUpon>201802210900065_DateTimeForPreviousPassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802211236392_updateEnum.cs" />
-    <Compile Include="Migrations\201802211236392_updateEnum.Designer.cs">
-      <DependentUpon>201802211236392_updateEnum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MailService\MailService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\LinkRepository.cs" />
-    <Compile Include="Repositories\PasswordHistoryRepository.cs" />
-    <Compile Include="Repositories\UserRepositoy.cs" />
-    <Compile Include="Services\AuthenticationService.cs" />
-    <Compile Include="Services\LinkService.cs" />
-    <Compile Include="Services\MailService.cs" />
-    <Compile Include="Services\PasswordService.cs" />
-    <Compile Include="Services\UserPasswordHistoryService.cs" />
-    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OnionArchitecture.Core\OnionArchitecture.Core.csproj">
@@ -92,27 +54,7 @@
       <Name>OnionArchitecture.EF</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802201507329_Initial.resx">
-      <DependentUpon>201802201507329_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802201516331_Links.resx">
-      <DependentUpon>201802201516331_Links.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802210724450_Salt-Added.resx">
-      <DependentUpon>201802210724450_Salt-Added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802210900065_DateTimeForPreviousPassword.resx">
-      <DependentUpon>201802210900065_DateTimeForPreviousPassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802211236392_updateEnum.resx">
-      <DependentUpon>201802211236392_updateEnum.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

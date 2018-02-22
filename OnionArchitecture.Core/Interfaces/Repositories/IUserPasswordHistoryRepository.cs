@@ -6,7 +6,7 @@ namespace OnionArchitecture.Core.Interfaces.Repositories
 {
     public interface IUserPasswordHistoryRepository
     {
-        bool SaveUserPreviousPassword(UserPasswordHistory userPassword);
+        UserPasswordHistory SaveUserPreviousPassword(UserPasswordHistory userPassword);
         List<UserPasswordHistory> GetUserPreviousPasswordList(Guid userId);
     }
 }

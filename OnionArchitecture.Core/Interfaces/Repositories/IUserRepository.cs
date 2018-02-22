@@ -11,6 +11,6 @@ namespace OnionArchitecture.Core.Interfaces.Repositories
 
         User GetUserByUserId(Guid userId);
 
-        User ChangeUserPassword(User user);
+        User UpdateUser(User user);
     }
 }

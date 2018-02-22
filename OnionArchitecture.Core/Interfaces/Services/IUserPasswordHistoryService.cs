@@ -5,7 +5,7 @@ namespace OnionArchitecture.Core.Interfaces.Services
 {
     public interface IUserPasswordHistoryService
     {
-        void SaveUserPreviousPassword(UserPasswordHistory userPassword);
+        UserPasswordHistory SaveUserPreviousPassword(UserPasswordHistory userPassword);
         bool IsPasswordUsedBefore(Guid userId, string password);
     }
 }
