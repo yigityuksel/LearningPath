@@ -8,11 +8,5 @@ C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.EF\bin\Debug\Onion
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.EF\bin\Debug\EntityFramework.xml
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.EF\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.EF\obj\Debug\OnionArchitecture.EF.csprojResolveAssemblyReference.cache
-C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.EF\obj\Debug\OnionArchitecture.Infra.Migrations.Initial.resources
-C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.EF\obj\Debug\OnionArchitecture.Infra.Migrations.Links.resources
-C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.EF\obj\Debug\OnionArchitecture.Infra.Migrations.SaltAdded.resources
-C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.EF\obj\Debug\OnionArchitecture.Infra.Migrations.DateTimeForPreviousPassword.resources
-C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.EF\obj\Debug\OnionArchitecture.Infra.Migrations.updateEnum.resources
-C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.EF\obj\Debug\OnionArchitecture.EF.csproj.GenerateResource.Cache
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.EF\obj\Debug\OnionArchitecture.EF.dll
 C:\Users\y.yuksel\Desktop\OnionArchitecture\OnionArchitecture.EF\obj\Debug\OnionArchitecture.EF.pdb

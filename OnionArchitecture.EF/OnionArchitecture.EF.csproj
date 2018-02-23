@@ -54,27 +54,6 @@
     <Compile Include="Mappings\LinkMap.cs" />
     <Compile Include="Mappings\UserMap.cs" />
     <Compile Include="Mappings\UserPasswordHistoryMap.cs" />
-    <Compile Include="Migrations\201802201507329_Initial.cs" />
-    <Compile Include="Migrations\201802201507329_Initial.Designer.cs">
-      <DependentUpon>201802201507329_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802201516331_Links.cs" />
-    <Compile Include="Migrations\201802201516331_Links.Designer.cs">
-      <DependentUpon>201802201516331_Links.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802210724450_Salt-Added.cs" />
-    <Compile Include="Migrations\201802210724450_Salt-Added.Designer.cs">
-      <DependentUpon>201802210724450_Salt-Added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802210900065_DateTimeForPreviousPassword.cs" />
-    <Compile Include="Migrations\201802210900065_DateTimeForPreviousPassword.Designer.cs">
-      <DependentUpon>201802210900065_DateTimeForPreviousPassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802211236392_updateEnum.cs" />
-    <Compile Include="Migrations\201802211236392_updateEnum.Designer.cs">
-      <DependentUpon>201802211236392_updateEnum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\LinkRepository.cs" />
     <Compile Include="Repositories\PasswordHistoryRepository.cs" />
@@ -89,23 +68,6 @@
       <Project>{1c4f228e-7f20-43c6-947b-53f0619053fb}</Project>
       <Name>OnionArchitecture.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802201507329_Initial.resx">
-      <DependentUpon>201802201507329_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802201516331_Links.resx">
-      <DependentUpon>201802201516331_Links.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802210724450_Salt-Added.resx">
-      <DependentUpon>201802210724450_Salt-Added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802210900065_DateTimeForPreviousPassword.resx">
-      <DependentUpon>201802210900065_DateTimeForPreviousPassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802211236392_updateEnum.resx">
-      <DependentUpon>201802211236392_updateEnum.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

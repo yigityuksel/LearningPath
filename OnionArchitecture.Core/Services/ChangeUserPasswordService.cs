@@ -6,24 +6,35 @@ using OnionArchitecture.Core.Models;
 
 namespace OnionArchitecture.Core.Services
 {
-    public class UserService : IUserService
+    public class ChangeUserPasswordService : IChangeUserPasswordService
     {
+
         private readonly IUserRepository _userRepository;
         private readonly IUserPasswordHistoryService _userPasswordHistoryService;
+        private readonly IPasswordService _passwordService;
 
-        public UserService(IUserRepository userRepository, IUserPasswordHistoryService userPasswordHistoryService)
+        public ChangeUserPasswordService(IUserRepository userRepository, IUserPasswordHistoryService userPasswordHistoryService, IPasswordService passwordService)
         {
             _userRepository = userRepository;
             _userPasswordHistoryService = userPasswordHistoryService;
+            _passwordService = passwordService;
         }
 
-        public User AddUser(User user)
+        public User ChangeUserPassword(User user, string newPassword)
         {
 
-            var result = _userRepository.AddUser(user);
+            if (_userPasswordHistoryService.IsPasswordUsedBefore(user.Id, newPassword))
+                throw new PasswordUsedBeforeException("The password cannot same as previous 5 passwords");
+
+            user.Salt = Guid.NewGuid().ToString();
+            user.Password = _passwordService.CalculateHashedPassword(newPassword, user.Salt);
+            user.PasswordCreationTime = DateTime.Now;
+
+            var result = _userRepository.UpdateUser(user);
 
             if (result != null)
             {
+                //save to history,
                 _userPasswordHistoryService.SaveUserPreviousPassword(new UserPasswordHistory()
                 {
                     Salt = user.Salt,
@@ -36,27 +47,5 @@ namespace OnionArchitecture.Core.Services
 
             return result;
         }
-
-        public User GetUserByUserName(string username)
-        {
-
-            var user = _userRepository.GetUserByUserName(username);
-
-            if (user == null)
-                throw new UserNotFoundException();
-
-            return user;
-        }
-
-        public User GetUserByUserId(Guid userId)
-        {
-            var user = _userRepository.GetUserByUserId(userId);
-
-            if (user == null)
-                throw new UserNotFoundException();
-
-            return user;
-        }
-
     }
 }

@@ -28,7 +28,7 @@ namespace OnionArchitecture.EF.Repositories
         public List<UserPasswordHistory> GetUserPreviousPasswordList(Guid userId)
         {
             return _context.UserPasswordHistory
-                .Where(a => a.UserId == userId)
+                .Where(a => a.User.Id == userId)
                 .OrderBy(a => a.CreationDateTime)
                 .Take(5)
                 .ToList();

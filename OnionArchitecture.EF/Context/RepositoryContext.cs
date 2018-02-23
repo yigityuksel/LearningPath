@@ -12,11 +12,11 @@ namespace OnionArchitecture.EF.Context
         public DbSet<UserPasswordHistory> UserPasswordHistory { get; set; }
         public DbSet<Link> Links { get; set; }
 
-        public RepositoryContext()
-            : base("name=OnionArchitectureDB")
+        public RepositoryContext() : base("name=OnionArchitectureDB")
         {
-           
+            Database.SetInitializer(new CreateDatabaseIfNotExists<RepositoryContext>());
         }
+
         public void Commit()
         {
             SaveChanges();
@@ -25,6 +25,8 @@ namespace OnionArchitecture.EF.Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new UserMap());
+            modelBuilder.Configurations.Add(new UserPasswordHistoryMap());
+            modelBuilder.Configurations.Add(new LinkMap());
         }
     }
 }

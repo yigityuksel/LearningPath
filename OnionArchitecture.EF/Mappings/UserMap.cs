@@ -16,7 +16,8 @@ namespace OnionArchitecture.EF.Mappings
             Property(t => t.Salt).IsRequired();
             Property(t => t.PasswordCreationTime).IsRequired();
 
-            ToTable("User");
+
+            ToTable("User", "dbo");
         }
     }
 }
