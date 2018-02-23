@@ -1,4 +1,5 @@
 ﻿using System;
+using Moq;
 using NUnit.Framework;
 using OnionArchitecture.Core.Interfaces.Services;
 using OnionArchitecture.Infra.MailService;
@@ -8,23 +9,18 @@ namespace UnitTests.Tests
     [TestFixture]
     public class MailServiceTests
     {
-        private IMailService _mailService;
-        private string _userMailAddress;
-        private string _content;
+        private Mock<IMailService> _mailService;
 
         [SetUp]
         public void MailServiceTestsSetup()
         {
-            _mailService = new MailService();
-            _userMailAddress = "yyu@emakina.com";
-            _content = "Content";
+            _mailService = new Mock<IMailService>();
         }
 
         [Test]
         public void SendMail()
         {
-            var result = _mailService.SendMail(_userMailAddress, _content);
-            Assert.IsTrue(result);
+            _mailService.Setup(a => a.SendMail("test", "test")).Returns(true);
         }
     }
 }

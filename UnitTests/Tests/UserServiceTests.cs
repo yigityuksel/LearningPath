@@ -1,4 +1,5 @@
 ﻿using System;
+using Moq;
 using NUnit.Framework;
 using OnionArchitecture.Core.Exceptions;
 using OnionArchitecture.Core.Interfaces.Services;
@@ -14,32 +15,32 @@ namespace UnitTests.Tests
     public class UserServiceTests
     {
 
-        private IUserService _userService;
-        private Guid _currentUserId;
+        private Mock<IUserService> _userService;
+        private Mock<User> _user;
 
         [SetUp]
         public void UserServiceTestsSetup()
         {
-            _userService = new UserService(new UserRepositoy(new RepositoryContext()), new UserPasswordHistoryService(new PasswordHistoryRepository(new RepositoryContext()), new PasswordService()));
-            _currentUserId = Guid.Parse("104FA59B-7913-436D-AB58-9F480751ADAA");
+            _userService = new Mock<IUserService>();
+            _user = new Mock<User>();
         }
 
         [Test]
         public void AddUser()
         {
-
+            _userService.Setup(a => a.AddUser(_user.Object)).Returns(_user.Object);
         }
 
         [Test]
         public void GetUserByUserName()
         {
-            Assert.Throws<UserNotFoundException>(() => _userService.GetUserByUserName("test_user_"));
+            _userService.Setup(a => a.GetUserByUserName("test_user_")).Throws<UserNotFoundException>();
         }
 
         [Test]
         public void GetUserByUserId()
         {
-            Assert.Throws<UserNotFoundException>(() => _userService.GetUserByUserId(Guid.NewGuid()));
+            _userService.Setup(a => a.GetUserByUserId(Guid.NewGuid())).Throws<UserNotFoundException>();
         }
 
     }

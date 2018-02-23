@@ -24,3 +24,11 @@ C:\Users\y.yuksel\Desktop\OnionArchitecture\UnitTests\bin\Debug\EntityFramework.
 C:\Users\y.yuksel\Desktop\OnionArchitecture\UnitTests\bin\Debug\nunit.framework.xml
 C:\Users\y.yuksel\Desktop\OnionArchitecture\UnitTests\obj\Debug\UnitTests.dll
 C:\Users\y.yuksel\Desktop\OnionArchitecture\UnitTests\obj\Debug\UnitTests.pdb
+C:\Users\y.yuksel\Desktop\OnionArchitecture\UnitTests\bin\Debug\Castle.Core.dll
+C:\Users\y.yuksel\Desktop\OnionArchitecture\UnitTests\bin\Debug\Moq.dll
+C:\Users\y.yuksel\Desktop\OnionArchitecture\UnitTests\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\y.yuksel\Desktop\OnionArchitecture\UnitTests\bin\Debug\System.ValueTuple.dll
+C:\Users\y.yuksel\Desktop\OnionArchitecture\UnitTests\bin\Debug\Castle.Core.xml
+C:\Users\y.yuksel\Desktop\OnionArchitecture\UnitTests\bin\Debug\Moq.pdb
+C:\Users\y.yuksel\Desktop\OnionArchitecture\UnitTests\bin\Debug\Moq.xml
+C:\Users\y.yuksel\Desktop\OnionArchitecture\UnitTests\bin\Debug\System.Threading.Tasks.Extensions.xml
