@@ -9,18 +9,26 @@ namespace UnitTests.Tests
     [TestFixture]
     public class MailServiceTests
     {
-        private Mock<IMailService> _mailService;
+        private Mock<IMailService> _mock;
 
         [SetUp]
-        public void MailServiceTestsSetup()
+        public void SetUp()
         {
-            _mailService = new Mock<IMailService>();
+            _mock = new Mock<IMailService>();
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            _mock.Reset();
         }
 
         [Test]
-        public void SendMail()
+        public void SendMailTest()
         {
-            _mailService.Setup(a => a.SendMail("test", "test")).Returns(true);
+            _mock.Setup(a => a.SendMail(It.IsAny<string>(), It.IsAny<string>())).Returns(true);
+
+            Assert.That(_mock.Object.SendMail(It.IsAny<string>(), It.IsAny<string>()), Is.EqualTo(true));
         }
     }
 }

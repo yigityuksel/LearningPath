@@ -10,19 +10,39 @@ namespace UnitTests.Tests
     public class PasswordServiceTests
     {
 
-        private Mock<IPasswordService> _passwordService;
+        private Mock<IPasswordService> _mock;
 
         [SetUp]
-        public void PasswordServiceTestsSetup()
+        public void SetUp()
         {
-           _passwordService = new Mock<IPasswordService>();
+            _mock = new Mock<IPasswordService>();
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            _mock = new Mock<IPasswordService>();
         }
 
         [Test]
-        public void CalculateHashPassword()
+        public void CalculateHashPasswordThrowsArgumentNullExceptionTest()
         {
-            _passwordService.Setup(a => a.CalculateHashedPassword("1234", Guid.NewGuid().ToString())).Returns("");
+            _mock.Setup(a => a.CalculateHashedPassword(string.Empty, string.Empty))
+                .Throws(new ArgumentNullException());
+
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                _mock.Object.CalculateHashedPassword(string.Empty, string.Empty);
+            });
         }
 
+        [Test]
+        public void CalculateHashPasswordTest()
+        {
+            _mock.Setup(a => a.CalculateHashedPassword(It.IsAny<string>(), It.IsAny<string>()))
+                .Returns(It.IsAny<string>());
+
+            Assert.That(_mock.Object.CalculateHashedPassword(It.IsAny<string>(), It.IsAny<string>()), Is.EqualTo(It.IsAny<string>()));
+        }
     }
 }

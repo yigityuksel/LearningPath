@@ -4,10 +4,6 @@ using NUnit.Framework;
 using OnionArchitecture.Core.Exceptions;
 using OnionArchitecture.Core.Interfaces.Services;
 using OnionArchitecture.Core.Models;
-using OnionArchitecture.Core.Services;
-using OnionArchitecture.EF.Context;
-using OnionArchitecture.EF.Repositories;
-
 
 namespace UnitTests.Tests
 {
@@ -15,32 +11,64 @@ namespace UnitTests.Tests
     public class UserServiceTests
     {
 
-        private Mock<IUserService> _userService;
-        private Mock<User> _user;
+        private Mock<IUserService> _mock;
 
         [SetUp]
-        public void UserServiceTestsSetup()
+        public void SetUp()
         {
-            _userService = new Mock<IUserService>();
-            _user = new Mock<User>();
+            _mock = new Mock<IUserService>();
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            _mock.Reset();
         }
 
         [Test]
-        public void AddUser()
+        public void AddUserTest()
         {
-            _userService.Setup(a => a.AddUser(_user.Object)).Returns(_user.Object);
+
+            _mock.Setup(a => a.AddUser(It.IsAny<User>())).Returns(It.IsAny<User>());
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(_mock.Object.AddUser(It.IsAny<User>()), Is.EqualTo(It.IsAny<User>()));
+            });
         }
 
         [Test]
-        public void GetUserByUserName()
+        public void GetUserByUserNameThrowsExceptionTest()
         {
-            _userService.Setup(a => a.GetUserByUserName("test_user_")).Throws<UserNotFoundException>();
+            _mock.Setup(a => a.GetUserByUserName(It.IsAny<string>())).Throws(new UserNotFoundException());
+
+            Assert.Throws<UserNotFoundException>(
+                () => { _mock.Object.GetUserByUserName(It.IsAny<string>()); });
         }
 
         [Test]
-        public void GetUserByUserId()
+        public void GetUserByUserNameTest()
         {
-            _userService.Setup(a => a.GetUserByUserId(Guid.NewGuid())).Throws<UserNotFoundException>();
+            _mock.Setup(a => a.GetUserByUserName(It.IsAny<string>())).Returns(It.IsAny<User>());
+
+            Assert.That(_mock.Object.GetUserByUserName(It.IsAny<string>()), Is.EqualTo(It.IsAny<User>()));
+        }
+
+        [Test]
+        public void GetUserByUserIdThrowsExceptionTest()
+        {
+            _mock.Setup(a => a.GetUserByUserId(It.IsAny<Guid>())).Throws(new UserNotFoundException());
+
+            Assert.Throws<UserNotFoundException>(
+                () => { _mock.Object.GetUserByUserId(It.IsAny<Guid>()); });
+        }
+
+        [Test]
+        public void GetUserByIdTest()
+        {
+            _mock.Setup(a => a.GetUserByUserId(It.IsAny<Guid>())).Returns(It.IsAny<User>());
+
+            Assert.That(_mock.Object.GetUserByUserId(It.IsAny<Guid>()), Is.EqualTo(It.IsAny<User>()));
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System;
+using System.Security.Cryptography;
 using System.Text;
 using OnionArchitecture.Core.Interfaces.Services;
 
@@ -8,6 +9,10 @@ namespace OnionArchitecture.Core.Services
     {
         public string CalculateHashedPassword(string password, string salt)
         {
+
+            if (!string.IsNullOrEmpty(password) && !string.IsNullOrEmpty(salt))
+                throw new ArgumentNullException();
+
             using (var md5 = MD5.Create())
             {
                 var inputBytes = Encoding.ASCII.GetBytes(password + salt);

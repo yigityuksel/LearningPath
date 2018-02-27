@@ -13,24 +13,38 @@ namespace UnitTests.Tests
     [TestFixture]
     public class ChangeUserPasswordService
     {
-        private Mock<IChangeUserPasswordService> _changeUserPasswordService;
-        private Mock<User> _user;
-        private Guid _currentUserId;
+        private Mock<IChangeUserPasswordService> _mock;
 
         [SetUp]
-        public void UserServiceTestsSetup()
+        public void Setup()
         {
-            _changeUserPasswordService = new Mock<IChangeUserPasswordService>();
-            _user = new Mock<User>();
-            _currentUserId = Guid.Parse("104FA59B-7913-436D-AB58-9F480751ADAA");
+            _mock = new Mock<IChangeUserPasswordService>();
+
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            _mock.Reset();
         }
 
         [Test]
-        public void ChangeUserPassword()
+        public void ChangeUserPasswordThrowsPasswordUsedBeforeExceptionTest()
         {
-            _changeUserPasswordService
-                .Setup(a => a.ChangeUserPassword(_user.Object, "test_password"))
-                .Throws<PasswordUsedBeforeException>();
+            _mock.Setup(a => a.ChangeUserPassword(It.IsAny<User>(), It.IsAny<string>())).Throws(new PasswordUsedBeforeException());
+
+            Assert.Throws<PasswordUsedBeforeException>(() =>
+            {
+                _mock.Object.ChangeUserPassword(It.IsAny<User>(), It.IsAny<string>());
+            });
+        }
+
+        [Test]
+        public void ChangeUserPasswordTest()
+        {
+            _mock.Setup(a => a.ChangeUserPassword(It.IsAny<User>(), It.IsAny<string>())).Returns(It.IsAny<User>());
+
+            Assert.That(_mock.Object.ChangeUserPassword(It.IsAny<User>(), It.IsAny<string>()), Is.EqualTo(It.IsAny<User>()));
         }
 
     }
