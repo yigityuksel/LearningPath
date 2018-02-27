@@ -84,7 +84,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\ChangeUserPasswordService.cs" />
+    <Compile Include="Tests\ChangeUserPasswordServiceTests.cs" />
+    <Compile Include="Tests\ImageServiceTests.cs" />
     <Compile Include="Tests\LinkServiceTests.cs" />
     <Compile Include="Tests\MailServiceTests.cs" />
     <Compile Include="Tests\PasswordServiceTests.cs" />

@@ -9,32 +9,15 @@ namespace OnionArchitecture.Core.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
-        private readonly IUserPasswordHistoryService _userPasswordHistoryService;
 
-        public UserService(IUserRepository userRepository, IUserPasswordHistoryService userPasswordHistoryService)
+        public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
-            _userPasswordHistoryService = userPasswordHistoryService;
         }
 
         public User AddUser(User user)
         {
-
-            var result = _userRepository.AddUser(user);
-
-            if (result != null)
-            {
-                _userPasswordHistoryService.SaveUserPreviousPassword(new UserPasswordHistory()
-                {
-                    Salt = user.Salt,
-                    Password = user.Password,
-                    Id = Guid.NewGuid(),
-                    User = user,
-                    CreationDateTime = user.PasswordCreationTime
-                });
-            }
-
-            return result;
+            return _userRepository.AddUser(user);
         }
 
         public User GetUserByUserName(string username)

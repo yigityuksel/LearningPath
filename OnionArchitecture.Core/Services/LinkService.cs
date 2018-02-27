@@ -17,13 +17,16 @@ namespace OnionArchitecture.Core.Services
 
         public Link SaveLink(Link link)
         {
-            return _linkRepository.SaveLink(link);
+            var result = _linkRepository.SaveLink(link);
+            if (result == null)
+                throw new LinkCreationFailedException();
+
+            return result;
         }
 
         public Link GetLinkById(Guid linkId)
         {
             var result = _linkRepository.GetLinkById(linkId);
-     
             if(DateTime.Now > result.ExpirationDateTime)
                 throw new LinkExpiredException("Link has expired");
 

@@ -8,6 +8,7 @@ namespace OnionArchitecture.EF.Context.Interface
         DbSet<User> Users { get; set; }
         DbSet<UserPasswordHistory> UserPasswordHistory { get; set; }
         DbSet<Link> Links { get; set; }
+        DbSet<Image> Images { get; set; }
         void Commit();
     }
 }

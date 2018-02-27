@@ -9,8 +9,7 @@ namespace OnionArchitecture.Core.Services
     {
         public string CalculateHashedPassword(string password, string salt)
         {
-
-            if (!string.IsNullOrEmpty(password) && !string.IsNullOrEmpty(salt))
+            if (string.IsNullOrEmpty(password) || string.IsNullOrEmpty(salt))
                 throw new ArgumentNullException();
 
             using (var md5 = MD5.Create())

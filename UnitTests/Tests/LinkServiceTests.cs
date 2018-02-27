@@ -3,6 +3,7 @@ using Moq;
 using NUnit.Framework;
 using OnionArchitecture.Core.Enums;
 using OnionArchitecture.Core.Exceptions;
+using OnionArchitecture.Core.Interfaces.Repositories;
 using OnionArchitecture.Core.Interfaces.Services;
 using OnionArchitecture.Core.Models;
 using OnionArchitecture.Core.Services;
@@ -14,42 +15,54 @@ namespace UnitTests.Tests
     [TestFixture]
     public class LinkServiceTests
     {
-        private Mock<ILinkService> _mock;
+        private Link _link;
+        private ILinkService _linkService;
+        private Mock<ILinkRepository> _mockLinkRepository;
 
         [SetUp]
         public void SetUp()
         {
-            _mock = new Mock<ILinkService>();
+            _link = new Link() { ExpirationDateTime = DateTime.Now.AddDays(2) };
+            _mockLinkRepository = new Mock<ILinkRepository>();
+            _linkService = new LinkService(_mockLinkRepository.Object);
         }
 
         [TearDown]
         public void TearDown()
         {
-            _mock.Reset();
+            _mockLinkRepository.Reset();
+        }
+
+        [Test]
+        public void SaveLinkThrowsLinkCreationFailedExceptionTest()
+        {
+            _mockLinkRepository.Setup(a => a.SaveLink(It.IsAny<Link>())).Returns((Link)null);
+
+            Assert.Throws<LinkCreationFailedException>(() => { _linkService.SaveLink(It.IsAny<Link>()); });
         }
 
         [Test]
         public void SaveLinkTest()
         {
-            _mock.Setup(a => a.SaveLink(It.IsAny<Link>())).Returns(It.IsAny<Link>());
+            _mockLinkRepository.Setup(a => a.SaveLink(It.IsAny<Link>())).Returns(_link);
 
-            Assert.That(_mock.Object.SaveLink(It.IsAny<Link>()), Is.EqualTo(It.IsAny<Link>()));
+            Assert.That(_linkService.SaveLink(It.IsAny<Link>()), Is.EqualTo(_link));
         }
 
         [Test]
         public void GetLinkByIdThrowsLinkExpiredTest()
         {
-            _mock.Setup(a => a.GetLinkById(It.IsAny<Guid>())).Throws(new LinkExpiredException());
+            _mockLinkRepository.Setup(a => a.GetLinkById(It.IsAny<Guid>())).Throws(new LinkExpiredException());
 
-            Assert.Throws<LinkExpiredException>(() => { _mock.Object.GetLinkById(It.IsAny<Guid>()); });
+            Assert.Throws<LinkExpiredException>(() => { _linkService.GetLinkById(It.IsAny<Guid>()); });
         }
 
         [Test]
         public void GetLinkById()
         {
-            _mock.Setup(a => a.GetLinkById(It.IsAny<Guid>())).Returns(It.IsAny<Link>());
+            _mockLinkRepository.Setup(a => a.GetLinkById(It.IsAny<Guid>())).Returns(_link);
 
-            Assert.That(_mock.Object.GetLinkById(It.IsAny<Guid>()), Is.EqualTo(It.IsAny<Link>()));
+            Assert.That(_linkService.GetLinkById(It.IsAny<Guid>()), Is.EqualTo(_link));
         }
 
     }

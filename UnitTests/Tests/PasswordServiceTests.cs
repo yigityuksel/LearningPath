@@ -1,7 +1,5 @@
 ﻿using System;
-using Moq;
 using NUnit.Framework;
-using OnionArchitecture.Core.Interfaces.Services;
 using OnionArchitecture.Core.Services;
 
 namespace UnitTests.Tests
@@ -9,40 +7,24 @@ namespace UnitTests.Tests
     [TestFixture]
     public class PasswordServiceTests
     {
-
-        private Mock<IPasswordService> _mock;
+        private PasswordService _passwordService;
 
         [SetUp]
         public void SetUp()
         {
-            _mock = new Mock<IPasswordService>();
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            _mock = new Mock<IPasswordService>();
+            _passwordService = new PasswordService();
         }
 
         [Test]
         public void CalculateHashPasswordThrowsArgumentNullExceptionTest()
         {
-            _mock.Setup(a => a.CalculateHashedPassword(string.Empty, string.Empty))
-                .Throws(new ArgumentNullException());
-
-            Assert.Throws<ArgumentNullException>(() =>
-            {
-                _mock.Object.CalculateHashedPassword(string.Empty, string.Empty);
-            });
+            Assert.Throws<ArgumentNullException>(() => { _passwordService.CalculateHashedPassword(string.Empty, string.Empty); });
         }
 
         [Test]
         public void CalculateHashPasswordTest()
         {
-            _mock.Setup(a => a.CalculateHashedPassword(It.IsAny<string>(), It.IsAny<string>()))
-                .Returns(It.IsAny<string>());
-
-            Assert.That(_mock.Object.CalculateHashedPassword(It.IsAny<string>(), It.IsAny<string>()), Is.EqualTo(It.IsAny<string>()));
+            Assert.That(_passwordService.CalculateHashedPassword("1234", "1234"), Is.EqualTo("ED2B1F468C5F915F3F1CF75D7068BAAE"));
         }
     }
 }

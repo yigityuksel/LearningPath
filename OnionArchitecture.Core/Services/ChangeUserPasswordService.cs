@@ -30,22 +30,7 @@ namespace OnionArchitecture.Core.Services
             user.Password = _passwordService.CalculateHashedPassword(newPassword, user.Salt);
             user.PasswordCreationTime = DateTime.Now;
 
-            var result = _userRepository.UpdateUser(user);
-
-            if (result != null)
-            {
-                //save to history,
-                _userPasswordHistoryService.SaveUserPreviousPassword(new UserPasswordHistory()
-                {
-                    Salt = user.Salt,
-                    Password = user.Password,
-                    Id = Guid.NewGuid(),
-                    User = user,
-                    CreationDateTime = user.PasswordCreationTime
-                });
-            }
-
-            return result;
+            return _userRepository.UpdateUser(user);
         }
     }
 }
